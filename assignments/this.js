@@ -11,7 +11,7 @@
 * 4. Explicit Binding. Forcing a function to call a particular object by using ${this.object}, 
     which explicitly tells a function which object to use for the function we are performing 
 
-
+// the purpose of keyword this is to give you access to the object you are currently in and modify this to your liking.
 
 * write out a code example of each explanation above
 */
