@@ -68,6 +68,30 @@ Humanoid.prototype.greet = function() {
   return `${this.name} offers a greeting in ${this.language}.`;
 }
 
+function Hero(heroParams) {
+  Humanoid.call(this, heroParams);
+  this.damage = heroParams.damage;
+}
+
+Hero.prototype = Object.create(Humanoid.prototype);
+
+Hero.prototype.attack = function(villain) {
+  villain.healthPoints = villain.healthPoints - hero.damage;
+  return `${this.name} attacked for ${this.damage}`
+}
+
+function Villain(villainParams) {
+  Humanoid.call(this, villainParams);
+  this.damage = villainParams.damage;
+}
+
+Villain.prototype = Object.create(Humanoid.prototype);
+
+Villain.prototype.attack = function(villain) {
+  hero.healthPoints = hero.healthPoints - villain.damage;
+  return `${this.name} attacked for ${this.damage}.`
+}
+
 
 /*
   * Inheritance chain: GameObject -> CharacterStats -> Humanoid
@@ -127,7 +151,7 @@ const archer = new Humanoid({
   language: 'Elvish',
 });
 
-const heroine = new Humanoid({
+const hero = new Humanoid({
   createdAt: new Date(),
   dimensions: {
     length: 1,
@@ -143,9 +167,10 @@ const heroine = new Humanoid({
     "Celestial Spirit: Ifrit",
   ],
   language: 'Common Tongue',
+  damage: 10,
 });
 
-const Villain = new Humanoid({
+const villain = new Humanoid({
   createdAt: new Date(),
   dimensions: {
     length: 1,
@@ -160,6 +185,7 @@ const Villain = new Humanoid({
     "Legendary Spear, Gáe Bolg",
   ],
   language: 'Sylvanian',
+  damage: 10,
 });
 
 console.log(mage.createdAt); // Today's date
@@ -174,10 +200,14 @@ console.log(mage.takeDamage()); // Bruce took damage.
 console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
 
 
-console.log(heroine.name);
-console.log(heroine.greet());
-console.log(Villain.name);
-console.log(Villain.greet());
+console.log(hero.name);
+console.log(hero.greet());
+console.log(villain.name);
+console.log(villain.greet());
+
+// Trying to get Katelyn to beat up Count Chocula.
+
+console.log(hero.attack(villain));
 
 
   // Stretch task: 
