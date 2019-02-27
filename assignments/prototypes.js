@@ -127,6 +127,41 @@ const archer = new Humanoid({
   language: 'Elvish',
 });
 
+const heroine = new Humanoid({
+  createdAt: new Date(),
+  dimensions: {
+    length: 1,
+    width: 2,
+    height: 4,
+  },
+  healthPoints: 150,
+  name: 'Katelyn',
+  team: 'Celestial Isle',
+  weapons: [
+    "Sword of a Thousand Truths",
+    "Thunderfury, Blessed Blade of the Windseeker",
+    "Celestial Spirit: Ifrit",
+  ],
+  language: 'Common Tongue',
+});
+
+const Villain = new Humanoid({
+  createdAt: new Date(),
+  dimensions: {
+    length: 1,
+    width: 2,
+    height: 4,
+  },
+  healthPoints: 100,
+  name: "Count Chocula",
+  team: "Dark Kingdom",
+  weapons: [
+    "Enki, Sword of The End",
+    "Legendary Spear, Gáe Bolg",
+  ],
+  language: 'Sylvanian',
+});
+
 console.log(mage.createdAt); // Today's date
 console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
 console.log(swordsman.healthPoints); // 15
@@ -137,6 +172,12 @@ console.log(archer.language); // Elvish
 console.log(archer.greet()); // Lilith offers a greeting in Elvish.
 console.log(mage.takeDamage()); // Bruce took damage.
 console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
+
+
+console.log(heroine.name);
+console.log(heroine.greet());
+console.log(Villain.name);
+console.log(Villain.greet());
 
 
   // Stretch task: 
