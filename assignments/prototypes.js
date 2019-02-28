@@ -77,7 +77,7 @@ Hero.prototype = Object.create(Humanoid.prototype);
 
 Hero.prototype.attack = function(villain) {
   villain.healthPoints = villain.healthPoints - hero.damage;
-  return `${this.name} attacked for ${this.damage}`
+  return `${this.name} attacked Count Chocula for ${this.damage}.`
 }
 
 function Villain(villainParams) {
@@ -89,7 +89,7 @@ Villain.prototype = Object.create(Humanoid.prototype);
 
 Villain.prototype.attack = function(villain) {
   hero.healthPoints = hero.healthPoints - villain.damage;
-  return `${this.name} attacked for ${this.damage}.`
+  return `${this.name} attacked for Katelyn ${this.damage}.`
 }
 
 
@@ -151,7 +151,7 @@ const archer = new Humanoid({
   language: 'Elvish',
 });
 
-const hero = new Humanoid({
+const hero = new Hero({
   createdAt: new Date(),
   dimensions: {
     length: 1,
@@ -170,7 +170,7 @@ const hero = new Humanoid({
   damage: 10,
 });
 
-const villain = new Humanoid({
+const villain = new Villain({
   createdAt: new Date(),
   dimensions: {
     length: 1,
@@ -208,7 +208,10 @@ console.log(villain.greet());
 // Trying to get Katelyn to beat up Count Chocula.
 
 console.log(hero.attack(villain));
-
+console.log(hero.attack(villain));
+console.log(hero.attack(villain));
+console.log(hero.attack(villain));
+console.log(hero.attack(villain));
 
   // Stretch task: 
   // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
